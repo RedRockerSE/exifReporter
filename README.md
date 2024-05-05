@@ -1,5 +1,5 @@
 # exifReporter
-- WORK IN PROGRESS -
+-> WORK IN PROGRESS <-
 
 Extract EXIF-metadata from image- and videofiles and writes a html-report
 
