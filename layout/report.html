@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: white;
+            color: #333;
+            padding: 10px;
+            text-align: left;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        nav ul li a:hover {
+            color: #666;
+        }
+        section {
+            padding: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{title}}</h1>
+    </header>
+    
+    <section>
+        <table>
+            <tr>
+                <th>Thumbnail</th>
+                <th>EXIF Metadata</th>
+            </tr>
+       
+           
+        {% for file in file_list_data %}
+        
+        <tr>
+            <td valign="top"><img src="thumbnails/{{ file }}"/></td>
+            <td>
+                <table>
+                    {% for elem in file_list_data[file] %}
+                        {% for key, value in elem.items() %}
+                            <tr>
+                                <td><b>{{ key }}: </b></td>
+                                <td>{{ value }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                </table>
+            </td>
+            
+        </tr>
+        <tr>
+            <td colspan="2"><hr></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </section>
+    <!-- <footer>
+        <p>&copy; </p>
+    </footer>    -->
+</body>
+</html>

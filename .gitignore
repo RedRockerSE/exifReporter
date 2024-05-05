@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+*.env
+
+# 3rd party
+bin/
+
+# Distribution / packaging
+
+# Out
+output/
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Dependency directories
+lib/
+libs/
+dist/
+build/
+egg-info/
+pip-wheel-metadata/
