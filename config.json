@@ -1,0 +1,13 @@
+{
+    "report_folder": "output",
+    "excel_report": "False",
+    "html_report": "True",
+    "report_template": "report.html",
+    "report_name": "ExifTool Metadata Report",
+    "report_description": "This report contains information about the images in the case.",
+    "report_author": "Magnus Jonsson",
+    "report_company": "ACME Inc.",
+    "report_logo": "logo.png",
+    "report_date": "2024-05-05",
+    "report_version": "1.0"
+}

@@ -35,6 +35,7 @@
         }
         section {
             padding: 10px;
+            font-size: small;
         }
         footer {
             background-color: #333;
@@ -49,14 +50,15 @@
 </head>
 <body>
     <header>
-        <h1>{{title}}</h1>
+        <h1>{{title}} - {{report_name}}</h1>
+        <p>{{report_description}}</p>
     </header>
     
     <section>
         <table>
             <tr>
-                <th>Thumbnail</th>
-                <th>EXIF Metadata</th>
+                <th align="left">Thumbnail</th>
+                <th align="left">EXIF Metadata</th>
             </tr>
        
            
@@ -86,6 +88,6 @@
     </section>
     <!-- <footer>
         <p>&copy; </p>
-    </footer>    -->
+    </footer> -->
 </body>
 </html>

@@ -10,6 +10,12 @@ import shutil
 from jinja2 import Environment, FileSystemLoader
 from collections import defaultdict
 
+def get_config(key=None):
+    with open('config.json') as f:
+        config = json.load(f)
+    if key:
+        return config[key]
+
 def get_datestamp(format):
     now = datetime.datetime.now()
     return now.strftime(format)
@@ -27,13 +33,15 @@ def create_folder(path):
 
 def create_report(file_list_data, report_folder):
     env = Environment(loader=FileSystemLoader('layout'))
-    template = env.get_template('report.html')
+    template = env.get_template(get_config("report_template"))
     data = {
-        'title': 'Exif Reporter',
+        'title': 'exifReporter',
+        'report_name': get_config("report_name"),
+        'report_description': get_config("report_description"),
         'file_list_data': file_list_data
     }
     html = template.render(data)
-    with open(f'output\\{report_folder}\\html_report.html', 'w') as f:
+    with open(f'output\\{report_folder}\\index.html', 'w') as f:
         f.write(html)
 
 def create_thumbnail(file, report_folder):
@@ -81,6 +89,7 @@ def main(folder):
             file_list_data[thumb_filename].append(metadata[0])
     
     create_report(file_list_data, datestmp)
+
 
 if __name__ == '__main__':
     os.system('cls')
