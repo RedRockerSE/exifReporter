@@ -8,3 +8,6 @@ pip install -r requirements.txt
 
 ## Installing ExifTool
 Download ExifTool-executable from [exiftool.org](https://exiftool.org/) and unpack to a folder of your choice. Change the "exiftool-executable"-entry in config.json to point to the path and name of your exiftool-executable.
+
+## Usage
+python exifReporter.py -f "C:\path-to-folder-containing-Images-And-Videos\"
