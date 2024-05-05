@@ -9,5 +9,6 @@
     "report_company": "ACME Inc.",
     "report_logo": "logo.png",
     "report_date": "2024-05-05",
-    "report_version": "1.0"
+    "report_version": "1.0",
+    "exiftool_executable": "C:\\forensic\\exiftool-12.84\\exiftool(-k).exe"
 }

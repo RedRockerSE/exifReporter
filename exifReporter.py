@@ -79,7 +79,7 @@ def main(folder):
     
     file_list = enumerate_files(folder)
     print(f"[i] hittade {len(file_list)} filer att analysera")
-    with ExifTool() as e:
+    with ExifTool(get_config("exiftool_executable")) as e:
         file_list_data = defaultdict(list)
         for file in tqdm(file_list):
             metadata = e.get_metadata(file)

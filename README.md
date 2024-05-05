@@ -7,14 +7,4 @@ Extract EXIF-metadata from image- and videofiles and writes a html-report
 pip install -r requirements.txt
 
 ## Installing ExifTool
-Download ExifTool from [exiftool.org](https://exiftool.org/) and rename the executable "exiftool.exe" (windows) and place it in a folder named "bin" in the folder where exifReporter-script is located.
-
-Ex.
-
-    exifReporter\
-
-        exifReporter.py
-        
-        bin\
-
-            exiftool.exe
+Download ExifTool-executable from [exiftool.org](https://exiftool.org/) and unpack to a folder of your choice. Change the "exiftool-executable"-entry in config.json to point to the path and name of your exiftool-executable.
