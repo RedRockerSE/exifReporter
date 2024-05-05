@@ -46,28 +46,69 @@
             bottom: 0;
             width: 100%;
         }
+        .exif-table-main {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 600px;
+            border: 1px solid #333;
+/*             
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
+        }
+        .exif-table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 600px;
+            /* border: 1px solid #e1edff; */
+        }
+        .exif-table-main th,
+        .exif-table-main td {
+            padding: 5px 15px;
+        }
+        .exif-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .exif-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;  
+        }
+
+        .exif-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+
+
+
     </style>
 </head>
 <body>
     <header>
         <h1>{{title}} - {{report_name}}</h1>
-        <p>{{report_description}}</p>
+        
     </header>
     
     <section>
-        <table>
+        <table class="exif-table-main">
+            <caption>{{report_description}}</caption>
             <tr>
-                <th align="left">Thumbnail</th>
-                <th align="left">EXIF Metadata</th>
+                <th align="left"></th>
+                <th align="left"></th>
             </tr>
        
            
         {% for file in file_list_data %}
         
         <tr>
-            <td valign="top"><img src="thumbnails/{{ file }}"/></td>
+            <td valign="top">
+                <img src="thumbnails/{{ file }}"/>
+                <br/>
+                <i>{{file}}</i>
+            </td>
             <td>
-                <table>
+                <table class="exif-table">
                     {% for elem in file_list_data[file] %}
                         {% for key, value in elem.items() %}
                             <tr>

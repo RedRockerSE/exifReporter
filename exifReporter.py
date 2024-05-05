@@ -78,7 +78,7 @@ def main(folder):
     create_folder(f'output\\{datestmp}\\fullsize')
     
     file_list = enumerate_files(folder)
-    # print(file_list)
+    print(f"[i] hittade {len(file_list)} filer att analysera")
     with ExifTool() as e:
         file_list_data = defaultdict(list)
         for file in tqdm(file_list):
@@ -87,7 +87,7 @@ def main(folder):
             thumbnail = create_thumbnail(file, datestmp)
             thumb_filename = os.path.basename(thumbnail)
             file_list_data[thumb_filename].append(metadata[0])
-    
+    print(f"[i] skapar rapport")
     create_report(file_list_data, datestmp)
 
 
